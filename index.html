@@ -103,7 +103,7 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
   font-family:'Syne Mono',monospace;font-size:.82rem;letter-spacing:.2em;
   text-transform:uppercase;color:var(--acc);
   display:flex;align-items:center;gap:.8rem;margin-bottom:2rem;
-  opacity:0;animation:sR .6s 2s forwards;
+  opacity:0;animation:sR .45s .05s forwards;
 }
 .hero-eyebrow::before{content:'';width:2rem;height:1px;background:var(--acc)}
 
@@ -115,25 +115,25 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 }
 .hn-line{display:block;overflow:hidden}
 .hn-inner{display:block;opacity:0;transform:translateY(100%)}
-.hn1{animation:sU .8s 2.1s cubic-bezier(.16,1,.3,1) forwards}
-.hn2{animation:sU .8s 2.2s cubic-bezier(.16,1,.3,1) forwards}
+.hn1{animation:sU .65s .1s cubic-bezier(.16,1,.3,1) forwards}
+.hn2{animation:sU .65s .2s cubic-bezier(.16,1,.3,1) forwards}
 
 .hero-tagline{
   font-family:'DM Serif Display',serif;font-style:italic;
   font-size:clamp(1rem,1.5vw,1.25rem);color:var(--mid);
   line-height:1.7;max-width:420px;margin-bottom:2.5rem;
   border-left:2px solid var(--l2);padding-left:1.2rem;
-  opacity:0;animation:fU .6s 2.4s forwards;
+  opacity:0;animation:fU .5s .4s forwards;
 }
 .hero-desc{
   font-size:clamp(.9rem,1.2vw,1rem);color:var(--dim);
   line-height:1.9;max-width:420px;margin-bottom:3rem;
-  opacity:0;animation:fU .6s 2.55s forwards;
+  opacity:0;animation:fU .5s .55s forwards;
 }
 
 .hero-cta-row{
   display:flex;align-items:center;gap:1rem;flex-wrap:wrap;
-  opacity:0;animation:fU .6s 2.7s forwards;
+  opacity:0;animation:fU .5s .85s forwards;
 }
 .cta-primary{
   font-family:'Syne Mono',monospace;font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;
@@ -151,7 +151,7 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 .hero-stats{
   display:flex;gap:2.5rem;margin-top:3rem;padding-top:2rem;
   border-top:1px solid var(--l1);flex-wrap:wrap;
-  opacity:0;animation:fU .6s 2.85s forwards;
+  opacity:0;animation:fU .5s .75s forwards;
 }
 .hs-num{font-family:'DM Serif Display',serif;font-size:2.4rem;color:var(--white);line-height:1;display:block}
 .hs-num em{font-style:normal;color:var(--acc);font-size:1.5rem}
@@ -215,7 +215,7 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 .pg-body strong{color:var(--text);font-weight:500}
 
 /* ABOUT SECTIONS BELOW */
-.about-sections{padding:5rem 3.5rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;border-top:1px solid var(--l1)}
+.about-sections{padding:2.5rem 1.2rem;display:flex;flex-direction:column;gap:2.5rem;border-top:1px solid var(--l1)}
 .about-block-title{font-family:'DM Serif Display',serif;font-size:1.6rem;color:var(--white);margin-bottom:1.5rem}
 
 /* Reading list */
@@ -238,7 +238,7 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 .rl-fill.on{width:var(--w)}
 
 /* Skills inside about */
-.skills-cols{display:grid;grid-template-columns:1fr 1fr;gap:3rem;margin-top:1rem}
+.skills-cols{display:flex;flex-direction:column;gap:2rem;margin-top:1rem}
 .sk-group-title{font-family:'Syne Mono',monospace;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--acc);margin-bottom:1.2rem;padding-bottom:.6rem;border-bottom:1px solid var(--l1)}
 .sk-row{display:flex;align-items:center;gap:1rem;margin-bottom:1.1rem}
 .sk-name{font-size:.9rem;color:var(--text);flex:1}
@@ -266,7 +266,7 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
 .etag{font-family:'Syne Mono',monospace;font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--dim);border:1px solid var(--l1);padding:.2rem .5rem}
 
 /* Certs */
-.certs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--l1)}
+.certs-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--l1)}
 .cert-item{background:var(--bg);padding:1.8rem;transition:background .3s}
 .cert-item:hover{background:var(--s2)}
 .cert-glyph{font-size:1rem;color:var(--acc);margin-bottom:.7rem}
@@ -419,8 +419,8 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
   .pg-title{font-size:2.5rem}
   .pg-pull{font-size:1rem}
   .pg-body{font-size:.95rem}
-  .about-sections{grid-template-columns:1fr;gap:3rem;padding:3rem 1.4rem}
-  .skills-cols{grid-template-columns:1fr}
+  .about-sections{display:flex!important;flex-direction:column!important;gap:2rem;padding:2rem 1.2rem}
+  .skills-cols{flex-direction:column}
   .certs-grid{grid-template-columns:1fr 1fr}
 
   /* PROJECTS */
@@ -496,6 +496,27 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
   .about-img-side{order:1!important}
   .about-content-side{order:2!important}
 }
+
+@media(min-width:768px){
+  .about-sections{padding:4rem 3.5rem;gap:4rem}
+}
+
+@media(min-width:600px){
+  .certs-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(min-width:900px){
+  .certs-grid{grid-template-columns:repeat(3,1fr)}
+}
+
+@media(min-width:768px){
+  .about-content{padding:3.5rem}
+  .about-sections{padding:3.5rem;gap:3.5rem}
+  .skills-cols{flex-direction:column!important;gap:2rem}
+}
+@media(min-width:768px){
+  div[style*="padding:2.5rem 1.2rem;border-top"]{padding:4rem 3.5rem!important}
+  div[style*="padding:0 1.2rem"]{padding:0 3.5rem 4rem!important}
+}
 </style>
 </head>
 <body>
@@ -514,7 +535,6 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
   <div class="drawer-link" onclick="nav('home')">Home</div>
   <div class="drawer-link" onclick="nav('projects')">Projects</div>
   <div class="drawer-link" onclick="nav('about')">About</div>
-  <div class="drawer-link" onclick="nav('contact')">Contact</div>
   <div class="drawer-sub">tanmayik.kantekar@gmail.com</div>
 </div>
 
@@ -539,7 +559,7 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
       </div>
       <div class="hero-stats">
         <div><span class="hs-num"><span class="cu" data-t="5">0</span><em>+</em></span><span class="hs-lbl">Years</span></div>
-        <div><span class="hs-num">$<span class="cu" data-t="3.2" data-f="1">0</span><em>M</em></span><span class="hs-lbl">Value Generated</span></div>
+        <div><span class="hs-num"><span class="cu" data-t="21">0</span><em>%</em></span><span class="hs-lbl">Avg Accuracy ↑</span></div>
         <div><span class="hs-num"><span class="cu" data-t="15">0</span><em>+</em></span><span class="hs-lbl">Projects</span></div>
         <div><span class="hs-num"><span class="cu" data-t="45">0</span><em>%</em></span><span class="hs-lbl">Avg Latency ↓</span></div>
       </div>
@@ -605,61 +625,71 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
   </div>
 
   <!-- Reading + Skills -->
-  <div class="about-sections rv">
-    <div>
-      <div class="about-block-title">Reading Log</div>
-      <div class="book-shelf">
-        <div class="bk-card">
-          <div class="bk-icon" style="background:linear-gradient(160deg,#0e1a2e,#162038)"><svg viewBox="0 0 32 42" fill="none"><rect x="1" y="1" width="30" height="40" rx="2" stroke="rgba(201,169,110,0.5)" stroke-width="1.5"/><rect x="1" y="1" width="6" height="40" rx="1" fill="rgba(201,169,110,0.14)"/><line x1="11" y1="11" x2="27" y2="11" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/><line x1="11" y1="17" x2="27" y2="17" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/><line x1="11" y1="23" x2="23" y2="23" stroke="rgba(255,255,255,0.1)" stroke-width="1.2"/><line x1="11" y1="29" x2="26" y2="29" stroke="rgba(255,255,255,0.07)" stroke-width="1.2"/></svg></div>
-          <div class="bk-info"><span class="bk-status reading">Currently Reading</span><div class="bk-title">Gödel, Escher, Bach</div><div class="bk-author">Douglas Hofstadter</div><div class="bk-note">Loops within loops — like recursive feature pipelines.</div></div>
-          <div class="bk-bar"><div class="bk-fill" style="--w:65%"></div></div>
-        </div>
-        <div class="bk-card">
-          <div class="bk-icon" style="background:linear-gradient(160deg,#2a1a0a,#3c2810)"><svg viewBox="0 0 32 42" fill="none"><rect x="1" y="1" width="30" height="40" rx="2" stroke="rgba(201,169,110,0.5)" stroke-width="1.5"/><rect x="1" y="1" width="6" height="40" rx="1" fill="rgba(201,169,110,0.14)"/><line x1="11" y1="11" x2="27" y2="11" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/><line x1="11" y1="17" x2="27" y2="17" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/><line x1="11" y1="23" x2="23" y2="23" stroke="rgba(255,255,255,0.1)" stroke-width="1.2"/><line x1="11" y1="29" x2="26" y2="29" stroke="rgba(255,255,255,0.07)" stroke-width="1.2"/></svg></div>
-          <div class="bk-info"><span class="bk-status reading">Currently Reading</span><div class="bk-title">Range</div><div class="bk-author">David Epstein</div><div class="bk-note">Vindicates the Finance + CS combination entirely.</div></div>
-          <div class="bk-bar"><div class="bk-fill" style="--w:80%"></div></div>
-        </div>
-        <div class="bk-card">
-          <div class="bk-icon" style="background:linear-gradient(160deg,#0a1a12,#142a1e)"><svg viewBox="0 0 32 42" fill="none"><rect x="1" y="1" width="30" height="40" rx="2" stroke="rgba(201,169,110,0.5)" stroke-width="1.5"/><rect x="1" y="1" width="6" height="40" rx="1" fill="rgba(201,169,110,0.14)"/><line x1="11" y1="11" x2="27" y2="11" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/><line x1="11" y1="17" x2="27" y2="17" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/><line x1="11" y1="23" x2="23" y2="23" stroke="rgba(255,255,255,0.1)" stroke-width="1.2"/><line x1="11" y1="29" x2="26" y2="29" stroke="rgba(255,255,255,0.07)" stroke-width="1.2"/></svg></div>
-          <div class="bk-info"><span class="bk-status done">Finished</span><div class="bk-title">The Signal and the Noise</div><div class="bk-author">Nate Silver</div><div class="bk-note">Calibration over accuracy — required reading.</div></div>
-          <div class="bk-bar"><div class="bk-fill" style="--w:100%"></div></div>
-        </div>
-        <div class="bk-card">
-          <div class="bk-icon" style="background:linear-gradient(160deg,#1a180a,#2e2c10)"><svg viewBox="0 0 32 42" fill="none"><rect x="1" y="1" width="30" height="40" rx="2" stroke="rgba(201,169,110,0.5)" stroke-width="1.5"/><rect x="1" y="1" width="6" height="40" rx="1" fill="rgba(201,169,110,0.14)"/><line x1="11" y1="11" x2="27" y2="11" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/><line x1="11" y1="17" x2="27" y2="17" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/><line x1="11" y1="23" x2="23" y2="23" stroke="rgba(255,255,255,0.1)" stroke-width="1.2"/><line x1="11" y1="29" x2="26" y2="29" stroke="rgba(255,255,255,0.07)" stroke-width="1.2"/></svg></div>
-          <div class="bk-info"><span class="bk-status done">Finished</span><div class="bk-title">Factfulness</div><div class="bk-author">Hans Rosling</div><div class="bk-note">On data misinterpretation — read before your first dashboard.</div></div>
-          <div class="bk-bar"><div class="bk-fill" style="--w:100%"></div></div>
-        </div>
-      </div>
-    </div>
+  <div style="display:block;width:100%">
 
-    <div>
-      <div class="about-block-title">Skills</div>
-      <div class="skills-cols">
-        <div>
-          <div class="sk-group-title">Core ML</div>
-          <div class="sk-row"><div class="sk-name">Python / PySpark</div><div class="sk-track"><div class="sk-fill sfill" style="--w:97%"></div></div><div class="sk-num">97</div></div>
-          <div class="sk-row"><div class="sk-name">XGBoost / GBMs</div><div class="sk-track"><div class="sk-fill sfill" style="--w:95%"></div></div><div class="sk-num">95</div></div>
-          <div class="sk-row"><div class="sk-name">Feature Engineering</div><div class="sk-track"><div class="sk-fill sfill" style="--w:96%"></div></div><div class="sk-num">96</div></div>
-          <div class="sk-row"><div class="sk-name">MLOps / Airflow</div><div class="sk-track"><div class="sk-fill sfill" style="--w:90%"></div></div><div class="sk-num">90</div></div>
-          <div class="sk-row"><div class="sk-name">SHAP / XAI</div><div class="sk-track"><div class="sk-fill sfill" style="--w:90%"></div></div><div class="sk-num">90</div></div>
-        </div>
-        <div>
-          <div class="sk-group-title">Finance &amp; NLP</div>
-          <div class="sk-row"><div class="sk-name">ARIMA / GARCH</div><div class="sk-track"><div class="sk-fill sfill" style="--w:91%"></div></div><div class="sk-num">91</div></div>
-          <div class="sk-row"><div class="sk-name">VaR / Monte Carlo</div><div class="sk-track"><div class="sk-fill sfill" style="--w:89%"></div></div><div class="sk-num">89</div></div>
-          <div class="sk-row"><div class="sk-name">BERT / Transformers</div><div class="sk-track"><div class="sk-fill sfill" style="--w:82%"></div></div><div class="sk-num">82</div></div>
-          <div class="sk-row"><div class="sk-name">RAG / LangChain</div><div class="sk-track"><div class="sk-fill sfill" style="--w:80%"></div></div><div class="sk-num">80</div></div>
-          <div class="sk-row"><div class="sk-name">LLM Fine-tuning</div><div class="sk-track"><div class="sk-fill sfill" style="--w:75%"></div></div><div class="sk-num">75</div></div>
-        </div>
+  <!-- READING LOG -->
+  <div style="padding:2.5rem 1.2rem;border-top:1px solid var(--l1)">
+    <div class="about-block-title" style="margin-bottom:1.5rem">Reading Log</div>
+    <div style="display:flex;flex-direction:column;gap:.7rem;margin-bottom:1rem">
+
+      <div class="bk-card">
+        <div class="bk-icon" style="background:linear-gradient(160deg,#0e1a2e,#162038)"><svg viewBox="0 0 32 42" fill="none"><rect x="1" y="1" width="30" height="40" rx="2" stroke="rgba(201,169,110,0.5)" stroke-width="1.5"/><rect x="1" y="1" width="6" height="40" rx="1" fill="rgba(201,169,110,0.14)"/><line x1="11" y1="11" x2="27" y2="11" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/><line x1="11" y1="17" x2="27" y2="17" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/><line x1="11" y1="23" x2="23" y2="23" stroke="rgba(255,255,255,0.1)" stroke-width="1.2"/><line x1="11" y1="29" x2="26" y2="29" stroke="rgba(255,255,255,0.07)" stroke-width="1.2"/></svg></div>
+        <div class="bk-info"><span class="bk-status reading">Currently Reading</span><div class="bk-title">Gödel, Escher, Bach</div><div class="bk-author">Douglas Hofstadter</div><div class="bk-note">Loops within loops — like recursive feature pipelines.</div></div>
+        <div class="bk-bar"><div class="bk-fill" style="--w:65%"></div></div>
       </div>
-      <div class="tag-cloud" style="margin-top:2rem">
-        <span class="tg">Python</span><span class="tg">PySpark</span><span class="tg">SQL</span><span class="tg">XGBoost</span><span class="tg">Scikit-learn</span><span class="tg">TensorFlow</span><span class="tg">BERT</span><span class="tg">LoRA</span><span class="tg">RAG</span><span class="tg">Airflow</span><span class="tg">MLflow</span><span class="tg">Docker</span><span class="tg">FastAPI</span><span class="tg">AWS</span><span class="tg">GARCH</span><span class="tg">VaR</span><span class="tg">IFRS 9</span><span class="tg">PSI</span>
+
+      <div class="bk-card">
+        <div class="bk-icon" style="background:linear-gradient(160deg,#2a1a0a,#3c2810)"><svg viewBox="0 0 32 42" fill="none"><rect x="1" y="1" width="30" height="40" rx="2" stroke="rgba(201,169,110,0.5)" stroke-width="1.5"/><rect x="1" y="1" width="6" height="40" rx="1" fill="rgba(201,169,110,0.14)"/><line x1="11" y1="11" x2="27" y2="11" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/><line x1="11" y1="17" x2="27" y2="17" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/><line x1="11" y1="23" x2="23" y2="23" stroke="rgba(255,255,255,0.1)" stroke-width="1.2"/><line x1="11" y1="29" x2="26" y2="29" stroke="rgba(255,255,255,0.07)" stroke-width="1.2"/></svg></div>
+        <div class="bk-info"><span class="bk-status reading">Currently Reading</span><div class="bk-title">Range</div><div class="bk-author">David Epstein</div><div class="bk-note">Vindicates the Finance + CS combination entirely.</div></div>
+        <div class="bk-bar"><div class="bk-fill" style="--w:80%"></div></div>
       </div>
+
+      <div class="bk-card">
+        <div class="bk-icon" style="background:linear-gradient(160deg,#0a1a12,#142a1e)"><svg viewBox="0 0 32 42" fill="none"><rect x="1" y="1" width="30" height="40" rx="2" stroke="rgba(201,169,110,0.5)" stroke-width="1.5"/><rect x="1" y="1" width="6" height="40" rx="1" fill="rgba(201,169,110,0.14)"/><line x1="11" y1="11" x2="27" y2="11" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/><line x1="11" y1="17" x2="27" y2="17" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/><line x1="11" y1="23" x2="23" y2="23" stroke="rgba(255,255,255,0.1)" stroke-width="1.2"/><line x1="11" y1="29" x2="26" y2="29" stroke="rgba(255,255,255,0.07)" stroke-width="1.2"/></svg></div>
+        <div class="bk-info"><span class="bk-status done">Finished</span><div class="bk-title">The Signal and the Noise</div><div class="bk-author">Nate Silver</div><div class="bk-note">Calibration over accuracy — required reading.</div></div>
+        <div class="bk-bar"><div class="bk-fill" style="--w:100%"></div></div>
+      </div>
+
+      <div class="bk-card">
+        <div class="bk-icon" style="background:linear-gradient(160deg,#1a180a,#2e2c10)"><svg viewBox="0 0 32 42" fill="none"><rect x="1" y="1" width="30" height="40" rx="2" stroke="rgba(201,169,110,0.5)" stroke-width="1.5"/><rect x="1" y="1" width="6" height="40" rx="1" fill="rgba(201,169,110,0.14)"/><line x1="11" y1="11" x2="27" y2="11" stroke="rgba(255,255,255,0.2)" stroke-width="1.2"/><line x1="11" y1="17" x2="27" y2="17" stroke="rgba(255,255,255,0.15)" stroke-width="1.2"/><line x1="11" y1="23" x2="23" y2="23" stroke="rgba(255,255,255,0.1)" stroke-width="1.2"/><line x1="11" y1="29" x2="26" y2="29" stroke="rgba(255,255,255,0.07)" stroke-width="1.2"/></svg></div>
+        <div class="bk-info"><span class="bk-status done">Finished</span><div class="bk-title">Factfulness</div><div class="bk-author">Hans Rosling</div><div class="bk-note">On data misinterpretation — read before your first dashboard.</div></div>
+        <div class="bk-bar"><div class="bk-fill" style="--w:100%"></div></div>
+      </div>
+
     </div>
   </div>
 
+  <!-- SKILLS -->
+  <div style="padding:2.5rem 1.2rem;border-top:1px solid var(--l1)">
+    <div class="about-block-title" style="margin-bottom:1.5rem">Skills</div>
+
+    <div style="margin-bottom:2rem">
+      <div style="font-family:'Syne Mono',monospace;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--acc);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--l1)">Core ML</div>
+      <div class="sk-row"><div class="sk-n">Python / PySpark</div><div class="sk-track"><div class="sk-fill" style="--w:97%"></div></div><div class="sk-pct">97</div></div>
+      <div class="sk-row"><div class="sk-n">XGBoost / GBMs</div><div class="sk-track"><div class="sk-fill" style="--w:95%"></div></div><div class="sk-pct">95</div></div>
+      <div class="sk-row"><div class="sk-n">Feature Engineering</div><div class="sk-track"><div class="sk-fill" style="--w:96%"></div></div><div class="sk-pct">96</div></div>
+      <div class="sk-row"><div class="sk-n">MLOps / Airflow</div><div class="sk-track"><div class="sk-fill" style="--w:90%"></div></div><div class="sk-pct">90</div></div>
+      <div class="sk-row"><div class="sk-n">SHAP / XAI</div><div class="sk-track"><div class="sk-fill" style="--w:90%"></div></div><div class="sk-pct">90</div></div>
+    </div>
+
+    <div style="margin-bottom:2rem">
+      <div style="font-family:'Syne Mono',monospace;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;color:var(--acc);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid var(--l1)">Finance &amp; NLP</div>
+      <div class="sk-row"><div class="sk-n">ARIMA / GARCH</div><div class="sk-track"><div class="sk-fill" style="--w:91%"></div></div><div class="sk-pct">91</div></div>
+      <div class="sk-row"><div class="sk-n">VaR / Monte Carlo</div><div class="sk-track"><div class="sk-fill" style="--w:89%"></div></div><div class="sk-pct">89</div></div>
+      <div class="sk-row"><div class="sk-n">BERT / Transformers</div><div class="sk-track"><div class="sk-fill" style="--w:82%"></div></div><div class="sk-pct">82</div></div>
+      <div class="sk-row"><div class="sk-n">RAG / LangChain</div><div class="sk-track"><div class="sk-fill" style="--w:80%"></div></div><div class="sk-pct">80</div></div>
+      <div class="sk-row"><div class="sk-n">LLM Fine-tuning</div><div class="sk-track"><div class="sk-fill" style="--w:75%"></div></div><div class="sk-pct">75</div></div>
+    </div>
+
+    <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+      <span class="tg">Python</span><span class="tg">PySpark</span><span class="tg">SQL</span><span class="tg">XGBoost</span><span class="tg">Scikit-learn</span><span class="tg">TensorFlow</span><span class="tg">BERT</span><span class="tg">LoRA</span><span class="tg">RAG</span><span class="tg">Airflow</span><span class="tg">MLflow</span><span class="tg">Docker</span><span class="tg">FastAPI</span><span class="tg">AWS</span><span class="tg">GARCH</span><span class="tg">VaR</span><span class="tg">IFRS 9</span><span class="tg">PSI</span>
+    </div>
+  </div>
+
+</div>
+
   <!-- Experience -->
-  <div style="padding:4rem 3.5rem;border-top:1px solid var(--l1)" class="rv">
+  <div style="padding:2.5rem 1.2rem;border-top:1px solid var(--l1)" class="rv">
     <div class="about-block-title" style="margin-bottom:2rem">Experience</div>
     <div class="exp-item">
       <div class="exp-period">Apr 2024 – Present</div>
@@ -695,7 +725,7 @@ button{border:none;background:none;cursor:pointer;font-family:inherit}
   </div>
 
   <!-- Certs -->
-  <div style="padding:0 3.5rem 4rem" class="rv">
+  <div style="padding:0 1.2rem 2.5rem" class="rv">
     <div class="about-block-title" style="margin-bottom:1.5rem">Education &amp; Certifications</div>
     <div class="certs-grid">
       <div class="cert-item" style="border-top:2px solid var(--acc)"><div class="cert-glyph">🎓</div><div class="cert-name">MBA — Finance &amp; Business Intelligence</div><div class="cert-org">NMIMS University</div></div>
@@ -1002,7 +1032,24 @@ setTimeout(()=>{
     const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('on');obs.unobserve(e.target)}}),{threshold:.06});
     obs.observe(el);
   });
-},2200);
+},100);
 </script>
+<style>
+/* FORCE ABOUT LAYOUT */
+.about-sections{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:2.5rem !important;
+  padding:2rem 1.2rem !important;
+}
+.skills-cols{
+  display:flex !important;
+  flex-direction:column !important;
+  gap:1.5rem !important;
+}
+@media(min-width:768px){
+  .about-sections{padding:3.5rem !important;gap:3rem !important}
+}
+</style>
 </body>
 </html>
